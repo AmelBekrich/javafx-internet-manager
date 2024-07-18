@@ -1,0 +1,31 @@
+* {
+    -fx-font-size: 12px;
+}
+
+.root {
+    -fx-background-color: #bccee8;
+}
+
+.button {
+    -fx-background-color: #e06c28;
+    -fx-text-fill: white;
+    -fx-min-width: 120px;
+    -fx-min-height: 25px;
+}
+
+.button:hover {
+    -fx-background-color: #cf4e02;
+}
+
+.combo-box {
+    -fx-background-color: #ffae6b;
+    -fx-min-width: 160;
+}
+
+.table-view .column-header {
+    -fx-background-color: #ffae6b;
+}
+
+.text-field {
+    -fx-min-width: 160;
+}
