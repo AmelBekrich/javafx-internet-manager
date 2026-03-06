@@ -1,4 +1,4 @@
-package ba.smoki.internetapp;
+package com.smoki.internetapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

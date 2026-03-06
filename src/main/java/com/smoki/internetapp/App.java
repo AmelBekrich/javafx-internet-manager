@@ -1,4 +1,4 @@
-package ba.smoki.internetapp;
+package com.smoki.internetapp;
 
 import javafx.application.Application;
 import javafx.beans.property.SimpleObjectProperty;
@@ -14,6 +14,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.naming.InterruptedNamingException;
+
 public class App extends Application {
     private TableView<InternetPackage> table;
     private ObservableList<InternetPackage> data;
@@ -22,6 +24,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         table = new TableView<>();
         data = FXCollections.observableArrayList();
+        data.addAll(InternetPackageDAO.getAll());
 
         TableColumn<InternetPackage, String> firstNameColumn = new TableColumn<>("First Name:");
         firstNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getFirstName()));
@@ -76,6 +79,7 @@ public class App extends Application {
             if (firstName != null && lastName != null && address != null && internetSpeed != null && bandwidth != null && contractLength != null) {
                 InternetPackage internetPackage = new InternetPackage(firstName, lastName, address, internetSpeed, bandwidth, contractLength);
                 data.add(internetPackage);
+                InternetPackageDAO.insert(internetPackage);
                 firstNameInput.clear();
                 lastNameInput.clear();
                 lastNameInput.clear();
@@ -90,6 +94,8 @@ public class App extends Application {
             InternetPackage selectedItem = table.getSelectionModel().getSelectedItem();
             if (selectedItem != null) {
                 data.remove(selectedItem);
+                InternetPackageDAO.delete(selectedItem.getId());
+
             }
         });
 

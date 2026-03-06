@@ -1,12 +1,23 @@
-package ba.smoki.internetapp;
+package com.smoki.internetapp;
 
 public class InternetPackage {
+    private int id;
     private String firstName;
     private String lastName;
     private String address;
     private int internetSpeed;
     private String bandwidth;
     private int contractLength;
+
+    public InternetPackage(int id, String firstName, String lastName, String address, int internetSpeed, String bandwidth, int contractLength) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.internetSpeed = internetSpeed;
+        this.bandwidth = bandwidth;
+        this.contractLength = contractLength;
+    }
 
     public InternetPackage(String firstName, String lastName, String address, int internetSpeed, String bandwidth, int contractLength) {
         this.firstName = firstName;
@@ -18,6 +29,10 @@ public class InternetPackage {
     }
 
     public InternetPackage() {
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {
