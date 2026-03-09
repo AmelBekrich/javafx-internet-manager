@@ -7,7 +7,6 @@ A desktop JavaFX application for managing internet packages and customers using 
   - Adding new customers and internet packages
   - View all customers in a table
   - Delete customers from the database
-  - Clean and simple JavaFX user interface
 
 ## Technologies
 
@@ -15,6 +14,3 @@ A desktop JavaFX application for managing internet packages and customers using 
   - JavaFX
   - SQL database
   - JDBC
-
-
-Run App.java to start the program.
