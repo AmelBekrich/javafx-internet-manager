@@ -1,4 +1,4 @@
-# Iternet package manager application
+# Internet package manager application
 
 A desktop JavaFX application for managing internet packages and customers using database.
 
