@@ -35,7 +35,7 @@ public class App extends Application {
         TableColumn<InternetPackage, String> addressColumn = new TableColumn<>("Address:");
         addressColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAddress()));
         addressColumn.setPrefWidth(110);
-        TableColumn<InternetPackage, Integer> internetSpeedColumn = new TableColumn<>("Speed (Mb/s):");
+        TableColumn<InternetPackage, Integer> internetSpeedColumn = new TableColumn<>("Speed (MB/s):");
         internetSpeedColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getInternetSpeed()));
         internetSpeedColumn.setPrefWidth(110);
         TableColumn<InternetPackage, String> bandwidthColumn = new TableColumn<>("Bandwidth:");
@@ -56,11 +56,11 @@ public class App extends Application {
         addressInput.setPromptText("Address");
 
         ComboBox<Integer> internetSpeedInput = new ComboBox<>();
-        internetSpeedInput.getItems().addAll(2, 5, 10, 20, 50, 100);
+        internetSpeedInput.getItems().addAll(10, 15, 20, 50, 100, 300);
         internetSpeedInput.setPromptText("Internet Speed");
 
         ComboBox<String> bandwidthInput = new ComboBox<>();
-        bandwidthInput.getItems().addAll("1 GB", "5 GB", "10 GB", "100 GB", "Flat");
+        bandwidthInput.getItems().addAll("15 Mbps", "25 Mbps", "50 Mbps", "80 Mbps", "250 Mbps", "500 Mbps");
         bandwidthInput.setPromptText("Bandwidth");
 
         ComboBox<Integer> contractLengthInput = new ComboBox<>();
